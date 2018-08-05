@@ -194,7 +194,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
             PreferencesUtils.setLoginTime(LoginActivity.this, System.currentTimeMillis());
             IMChattingHelper.getInstance().sendInitLoginMsg();
             Intent intent = new Intent();
-            intent.setClass(LoginActivity.this, MainActivity.class);
+            if (AppManager.getClientUser().isShowNormal) {
+                intent.setClass(LoginActivity.this, MainActivity.class);
+            } else {
+                intent.setClass(LoginActivity.this, MainNewActivity.class);
+            }
             startActivity(intent);
             finishAll();
         }
@@ -232,7 +236,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
             PreferencesUtils.setLoginTime(LoginActivity.this, System.currentTimeMillis());
             IMChattingHelper.getInstance().sendInitLoginMsg();
             Intent intent = new Intent();
-            intent.setClass(LoginActivity.this, MainActivity.class);
+            if (AppManager.getClientUser().isShowNormal) {
+                intent.setClass(LoginActivity.this, MainActivity.class);
+            } else {
+                intent.setClass(LoginActivity.this, MainNewActivity.class);
+            }
             startActivity(intent);
             finishAll();
         }
@@ -347,7 +355,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
             AppManager.getClientUser().loginTime = System.currentTimeMillis();
             PreferencesUtils.setLoginTime(LoginActivity.this, System.currentTimeMillis());
             IMChattingHelper.getInstance().sendInitLoginMsg();
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            Intent intent = new Intent();
+            if (AppManager.getClientUser().isShowNormal) {
+                intent.setClass(LoginActivity.this, MainActivity.class);
+            } else {
+                intent.setClass(LoginActivity.this, MainNewActivity.class);
+            }
             startActivity(intent);
             finishAll();
         }

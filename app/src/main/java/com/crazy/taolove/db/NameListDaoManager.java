@@ -3,7 +3,6 @@ package com.crazy.taolove.db;
 import android.content.Context;
 
 import com.crazy.taolove.db.base.DBManager;
-import com.crazy.taolove.entity.Gold;
 import com.crazy.taolove.entity.NameList;
 import com.crazy.taolove.greendao.NameListDao;
 
@@ -81,5 +80,10 @@ public class NameListDaoManager extends DBManager {
 			return nameList;
 		}
 		return null;
+	}
+
+	public static void reset() {
+		release();
+		mInstance = null;
 	}
 }

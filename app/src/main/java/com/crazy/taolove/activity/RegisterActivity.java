@@ -196,7 +196,11 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             PreferencesUtils.setLoginTime(RegisterActivity.this, System.currentTimeMillis());
             IMChattingHelper.getInstance().sendInitLoginMsg();
             Intent intent = new Intent();
-            intent.setClass(RegisterActivity.this, MainActivity.class);
+            if (AppManager.getClientUser().isShowNormal) {
+                intent.setClass(RegisterActivity.this, MainActivity.class);
+            } else {
+                intent.setClass(RegisterActivity.this, MainNewActivity.class);
+            }
             startActivity(intent);
             finishAll();
         }
@@ -343,7 +347,12 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             AppManager.getClientUser().loginTime = System.currentTimeMillis();
             PreferencesUtils.setLoginTime(RegisterActivity.this, System.currentTimeMillis());
             IMChattingHelper.getInstance().sendInitLoginMsg();
-            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+            Intent intent = new Intent();
+            if (AppManager.getClientUser().isShowNormal) {
+                intent.setClass(RegisterActivity.this, MainActivity.class);
+            } else {
+                intent.setClass(RegisterActivity.this, MainNewActivity.class);
+            }
             startActivity(intent);
             finishAll();
         }

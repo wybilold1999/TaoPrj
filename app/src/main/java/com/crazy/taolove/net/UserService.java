@@ -255,4 +255,21 @@ public interface UserService {
      */
     @GET("buy/getFareActivityInfo")
     Call<ResponseBody> getFareActivityInfo(@Header("token") String token);
+
+    /**
+     * 获取通讯录
+     * @param token
+     * @param params
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("user/contactList")
+    Call<ResponseBody> getContactList(@Header("token") String token, @FieldMap ArrayMap<String, String> params);
+
+    /**
+     * 获取表情组
+     * @return
+     */
+    @GET("expression/getExpressionGroup")
+    Call<ResponseBody> getExpressionGroup();
 }

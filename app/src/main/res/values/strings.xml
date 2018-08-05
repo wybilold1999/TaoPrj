@@ -414,4 +414,13 @@
     <string name="free_give_vip">免费赠送会员</string>
     <string name="upload_faiure">上传失败</string>
 
+    <string name="tab_contacts">通讯录</string>
+    <string name="already_download">已下载</string>
+    <string name="download_failure">下载失败</string>
+    <string name="sticker_market">贴图商店</string>
+    <string name="action_delete_friends">删除好友</string>
+    <string name="action_add_friends">添加好友</string>
+    <string name="action_add_friends_success">添加好友成功</string>
+    <string name="phone_register">手机注册</string>
+
 </resources>
