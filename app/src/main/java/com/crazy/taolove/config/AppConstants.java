@@ -11,8 +11,8 @@ package com.crazy.taolove.config;
  */
 public class AppConstants {
 	
-//	public static final String BASE_URL = "http://119.23.144.11/TaoLoveServer/";
-	public static final String BASE_URL = "http://192.168.1.107:8080/TaoLoveServer/";
+	public static final String BASE_URL = "http://119.23.144.11/TaoLoveServer/";
+//	public static final String BASE_URL = "http://192.168.1.107:8080/TaoLoveServer/";
 
 	/**
 	 * 密码加密密匙

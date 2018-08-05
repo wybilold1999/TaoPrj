@@ -23,24 +23,24 @@ public class DaoMaster extends AbstractDaoMaster {
     public static void createAllTables(Database db, boolean ifNotExists) {
         ExpressionGroupDao.createTable(db, ifNotExists);
         ContactDao.createTable(db, ifNotExists);
+        ExpressionDao.createTable(db, ifNotExists);
         DynamicDao.createTable(db, ifNotExists);
         ConversationDao.createTable(db, ifNotExists);
         NameListDao.createTable(db, ifNotExists);
         IMessageDao.createTable(db, ifNotExists);
         GoldDao.createTable(db, ifNotExists);
-        ExpressionDao.createTable(db, ifNotExists);
     }
 
     /** Drops underlying database table using DAOs. */
     public static void dropAllTables(Database db, boolean ifExists) {
         ExpressionGroupDao.dropTable(db, ifExists);
         ContactDao.dropTable(db, ifExists);
+        ExpressionDao.dropTable(db, ifExists);
         DynamicDao.dropTable(db, ifExists);
         ConversationDao.dropTable(db, ifExists);
         NameListDao.dropTable(db, ifExists);
         IMessageDao.dropTable(db, ifExists);
         GoldDao.dropTable(db, ifExists);
-        ExpressionDao.dropTable(db, ifExists);
     }
 
     /**
@@ -61,12 +61,12 @@ public class DaoMaster extends AbstractDaoMaster {
         super(db, SCHEMA_VERSION);
         registerDaoClass(ExpressionGroupDao.class);
         registerDaoClass(ContactDao.class);
+        registerDaoClass(ExpressionDao.class);
         registerDaoClass(DynamicDao.class);
         registerDaoClass(ConversationDao.class);
         registerDaoClass(NameListDao.class);
         registerDaoClass(IMessageDao.class);
         registerDaoClass(GoldDao.class);
-        registerDaoClass(ExpressionDao.class);
     }
 
     public DaoSession newSession() {
