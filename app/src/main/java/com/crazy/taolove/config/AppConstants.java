@@ -33,7 +33,7 @@ public class AppConstants {
 	/**
 	 * QQ登录的appid和appkey
 	 */
-	public static String mAppid = "1105224805";
+	public static String mAppid = "1106732986";
 
 	/**
 	 * 微信登录

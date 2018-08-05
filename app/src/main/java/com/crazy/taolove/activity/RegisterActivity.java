@@ -125,7 +125,6 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         switch (view.getId()) {
             case R.id.next:
                 if(checkInput()){
-                    ProgressDialogUtils.getInstance(this).show(R.string.dialog_request_sms_code);
                     new CheckPhoneIsRegisterTask().request(
                             phoneNum.getText().toString().trim());
                 }
@@ -218,6 +217,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             if(s){
                 ToastUtil.showMessage(R.string.phone_already_register);
             } else {
+                ProgressDialogUtils.getInstance(RegisterActivity.this).show(R.string.dialog_request_sms_code);
                 //获取验证码
                 String phone_num = phoneNum.getText().toString().trim();
                 mClientUser.mobile = phone_num;
