@@ -540,9 +540,9 @@ public class MainActivity extends BaseActivity implements MessageUnReadListener.
 	 * 设置视图
 	 */
 	private void setupViews() {
-		viewPager = findViewById(R.id.viewpager);
+		viewPager = (CustomViewPager) findViewById(R.id.viewpager);
 		viewPager.setNoScroll(true);
-		bottomNavigationView = findViewById(R.id.bottom_navigation);
+		bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
 		//默认 >3 的选中效果会影响ViewPager的滑动切换时的效果，故利用反射去掉
 		BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 		bottomNavigationView.setOnNavigationItemSelectedListener(
